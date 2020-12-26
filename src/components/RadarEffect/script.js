@@ -1,11 +1,5 @@
-import Border from '../Border'
-
 export default {
   name: 'RadarEffect',
-  props: ['position'],
-  components: {
-    Border
-  },
   data() {
     return {
       radarContainerWidth: 0,

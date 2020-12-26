@@ -1,7 +1,6 @@
 <template>
-  <div :style="position" class="effect1">
-    <Border/>
-    <div id="container"></div>
+  <div class="effect1">
+    <div id="card3d-container"></div>
     <div class="menu">
 			<button 
         v-for="menu in menus"
@@ -19,20 +18,13 @@ import * as THREE from "three"
 import TWEEN from '@tweenjs/tween.js'
 import {TrackballControls} from 'three/examples/jsm/controls/TrackballControls.js'
 import { CSS3DRenderer, CSS3DObject } from 'three/examples/jsm/renderers/CSS3DRenderer.js';
-import Border from './Border'
 
 export default {
   name: 'Card3D',
-  components: {
-    Border
-  },
-  props: {
-    position: null
-  },
   data() {
     return {
-      width: parseInt(this.position.width),
-      height: parseInt(this.position.height),
+      width: 0,
+      height: 0,
       camera: null,
       scene: null,
       renderer: null,
@@ -175,6 +167,8 @@ export default {
     }
   },
   mounted() {
+    this.width = this.$el.offsetWidth
+    this.height = this.$el.offsetHeight
     this.init();
     this.animate();
   },
@@ -285,7 +279,7 @@ export default {
       //
       this.renderer = new CSS3DRenderer();
       this.renderer.setSize( this.width, this.height );
-      document.getElementById( 'container' ).appendChild( this.renderer.domElement );
+      document.getElementById( 'card3d-container' ).appendChild( this.renderer.domElement );
 
       //
       this.controls = new TrackballControls( this.camera, this.renderer.domElement );
@@ -349,11 +343,11 @@ export default {
 
 <style lang="less" scoped>
 .effect1{
-  position: absolute;
-  width: 300px;
-  height: 300px;
+  // position: absolute;
+  width: 100%;
+  height: 100%;
 
-  #container {
+  #card3d-container {
     width: 100%;
     height: 100%;
   }

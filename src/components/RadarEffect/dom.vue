@@ -1,6 +1,5 @@
 <template>
-  <div class="radar-effect" :style="position">
-    <Border/>
+  <div class="radar-effect">
      <div class="img-container" ref="radarContainer">
         <svg
           width="100%"
