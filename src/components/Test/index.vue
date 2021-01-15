@@ -1,6 +1,6 @@
 <template>
   <div class="test">
-    <div id="container"></div>
+    <div id="test-container"></div>
   </div>
 </template>
 <script>
@@ -34,7 +34,7 @@ export default {
     this.renderer = new THREE.WebGLRenderer()
     this.renderer.setSize(width, height)
 
-    document.getElementById("container").appendChild(this.renderer.domElement)
+    document.getElementById("test-container").appendChild(this.renderer.domElement)
 
     const geometry = new THREE.BoxGeometry();
     const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
