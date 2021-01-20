@@ -2,9 +2,9 @@
   <div class="container">
     <Headline title="WEBGL DATA VISUALIZATION"/>
     <Border :position="cardPosition"><Card3D/></Border>
-    <Border :position="mapPosition"><GlobalMap /></Border>
+    <Border :position="mapPosition"><QuickStart /></Border>
     <Border :position="radarPosition"><RadarEffect /></Border>
-    <Border :position="testPosition"><Test /></Border>
+    <Border :position="testPosition"><GlobalMap /></Border>
   </div>
 </template>
 
@@ -13,7 +13,7 @@ import Headline from '../components/Headline'
 import Card3D from '../components/Card3D'
 import GlobalMap from '../components/GlobalMap'
 import RadarEffect from '../components/RadarEffect/dom.vue'
-import Test from '../components/Test'
+import QuickStart from '../components/QuickStart'
 import Border from '../components/Border'
 
 export default {
@@ -24,7 +24,7 @@ export default {
     Card3D,
     GlobalMap,
     RadarEffect,
-    Test
+    QuickStart
   },
   data() {
     return {

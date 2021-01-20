@@ -14,8 +14,8 @@ const app = createApp(App)
 app.use(router)
 app.mount('#app')
 
-app.config.errorHandler = (err, _vm, info) => {
+app.config.errorHandler = (err) => {
   if (err) {
-    console.error(`${info}`)
+    console.error(`${err}`)
   }
 }

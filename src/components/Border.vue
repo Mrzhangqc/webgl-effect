@@ -43,16 +43,17 @@ export default {
     height: 400px;
     z-index: 1;
     overflow: visible;
-    > svg{
+    > svg,
+    > div {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
+      z-index: 1;
     }
     > div {
-      width: 400px;
-      height: 400px;
+      z-index: 2;
     }
   }
 </style>

@@ -6,6 +6,7 @@ function resolve(dir) {
 
 module.exports = {
   publicPath: '/',
+  lintOnSave: process.env.NODE_ENV === 'development',
   chainWebpack: config => {
     config.resolve.alias
       .set("@", resolve("src"))
