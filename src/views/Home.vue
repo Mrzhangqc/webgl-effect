@@ -1,68 +1,62 @@
 <template>
   <div class="container">
-    <Headline title="WEBGL DATA VISUALIZATION"/>
-    <Border :position="cardPosition"><Card3D/></Border>
-    <Border :position="mapPosition"><QuickStart /></Border>
-    <Border :position="radarPosition"><RadarEffect /></Border>
-    <Border :position="testPosition"><GlobalMap /></Border>
+    <Headline title="WEBGL DATA VISUALIZATION" />
+    <Border :position="cardPosition">
+      <Card3D />
+    </Border>
+    <Border :position="mapPosition">
+      <QuickStart />
+    </Border>
+    <Border :position="radarPosition">
+      <RadarEffect />
+    </Border>
+    <Border :position="testPosition">
+      <GlobalMap />
+    </Border>
   </div>
 </template>
 
-<script>
-import Headline from '../components/Headline'
-import Card3D from '../components/Card3D'
-import GlobalMap from '../components/GlobalMap'
-import RadarEffect from '../components/RadarEffect/dom.vue'
-import QuickStart from '../components/QuickStart'
-import Border from '../components/Border'
+<script setup>
+  import { defineAsyncComponent, reactive } from 'vue';
 
-export default {
-  name: 'HelloWorld',
-  components: {
-    Border,
-    Headline,
-    Card3D,
-    GlobalMap,
-    RadarEffect,
-    QuickStart
-  },
-  data() {
-    return {
-      cardPosition : {
-        position:'absolute',
-        left: "20px", 
-        top: "60px",
-        width: '400px',
-        height: '400px'
-      },
-      mapPosition: {
-        position:'absolute',
-        left: "440px", 
-        top: "60px",
-        width: '400px',
-        height: '400px'
-      },
-      radarPosition: {
-        position:'absolute',
-        left: "860px", 
-        top: "60px",
-        width: '400px',
-        height: '400px'
-      },
-      testPosition: {
-        position:'absolute',
-        left: "20px", 
-        top: "480px",
-        width: '1240px',
-        height: '400px'
-      },
-    }
-  }
-}
+  const Headline = defineAsyncComponent(() => import('../components/Headline.vue'));
+  const Card3D = defineAsyncComponent(() => import('../components/Card3D.vue'));
+  const GlobalMap = defineAsyncComponent(() => import('../components/GlobalMap.vue'));
+  const RadarEffect = defineAsyncComponent(() => import('../components/RadarEffect/dom.vue'));
+  const QuickStart = defineAsyncComponent(() => import('../components/QuickStart/index.vue'));
+  const Border = defineAsyncComponent(() => import('../components/Border.vue'));
+
+  const cardPosition = reactive({
+    position:'absolute',
+    left: "20px", 
+    top: "60px",
+    width: '400px',
+    height: '400px'
+  })
+  const mapPosition = reactive({
+    position:'absolute',
+    left: "440px", 
+    top: "60px",
+    width: '400px',
+    height: '400px'
+  });
+  const radarPosition = reactive({
+    position:'absolute',
+    left: "860px", 
+    top: "60px",
+    width: '400px',
+    height: '400px'
+  });
+  const testPosition = reactive({
+    position:'absolute',
+    left: "20px", 
+    top: "480px",
+    width: '1240px',
+    height: '400px'
+  });
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style scoped lang="less">
   .container{
     position: relative;
     width: 100%;

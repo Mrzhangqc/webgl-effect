@@ -4,11 +4,12 @@
     "node": true
   },
   "extends": [
-    "plugin:vue/vue3-essential",
-    "eslint:recommended"
+    "eslint:recommended", // ESLint 官方推荐规则
+    "plugin:vue/vue3-recommended" // Vue 3 官方推荐规则
   ],
   "parserOptions": {
-    "parser": "babel-eslint"
+    "parser": "@babel/eslint-parser",
+    "requireConfigFile": false
   },
   "rules": {
     "no-unused-vars": 0,

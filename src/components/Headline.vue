@@ -1,13 +1,11 @@
 <template>
   <div class="headline">
-    <h1>{{title}}</h1>
+    <h1>{{ props.title }}</h1>
   </div>
 </template>
-<script>
-export default {
-  name: 'Headline',
-  props: ['title']
-}
+<script setup>
+import { defineProps } from 'vue'
+const props = defineProps(['title'])
 </script>
 <style lang="less" scoped>
   .headline{

@@ -2,11 +2,10 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import './assets/index.less'
 
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createMemoryHistory } from 'vue-router'
 import routes from './routes'
-
 const router = createRouter({
-  history: createWebHistory(),
+  history: createMemoryHistory(),
   routes
 })
 

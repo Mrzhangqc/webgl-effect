@@ -3,16 +3,8 @@
     <div>地图</div>
   </div>
 </template>
-<script>
+<script setup>
 
-export default {
-  name:'GlobalMap',
-  data() {
-    return {
-
-    }
-  }
-}
 </script>
 <style lang="less" scoped>
 
