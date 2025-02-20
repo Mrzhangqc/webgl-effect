@@ -15,10 +15,5 @@ yarn serve
 yarn build
 ```
 
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Preview
+![map](https://github.com/user-attachments/assets/b1c0db86-354b-4229-bce3-2ac5aa1c988a)
