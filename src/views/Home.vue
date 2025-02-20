@@ -10,6 +10,9 @@
     <Border :position="radarPosition">
       <RadarEffect />
     </Border>
+    <Border :position="motionPosition">
+      <Motion />
+    </Border>
     <Border :position="testPosition">
       <GlobalMap />
     </Border>
@@ -21,6 +24,7 @@
 
   const Headline = defineAsyncComponent(() => import('../components/Headline.vue'));
   const Card3D = defineAsyncComponent(() => import('../components/Card3D.vue'));
+  const Motion = defineAsyncComponent(() => import('../components/Motion.vue'));
   const GlobalMap = defineAsyncComponent(() => import('../components/GlobalMap.vue'));
   const RadarEffect = defineAsyncComponent(() => import('../components/RadarEffect/dom.vue'));
   const QuickStart = defineAsyncComponent(() => import('../components/QuickStart/index.vue'));
@@ -51,7 +55,14 @@
     position:'absolute',
     left: "20px", 
     top: "480px",
-    width: '1240px',
+    width: '400px',
+    height: '400px'
+  });
+  const motionPosition = reactive({
+    position:'absolute',
+    left: "440px", 
+    top: "480px",
+    width: '400px',
     height: '400px'
   });
 </script>
